@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import AuthorizationPage from "./pages/AuthorizationPage.vue";
 import GeneralDetailsPage from "./pages/GeneralDetailsPage.vue";
 import CombatDetailsPage from "./pages/CombatDetailsPage.vue";
+import EquipmentPage from "./pages/EquipmentPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,6 +28,12 @@ const router = createRouter({
       path: "/characters/:uuid/combat",
       meta: { auth: true },
       component: CombatDetailsPage,
+    },
+    {
+      name: "Equipment",
+      path: "/characters/:uuid/equipment",
+      meta: { auth: true },
+      component: EquipmentPage,
     },
   ],
 });

@@ -23,19 +23,11 @@
           </router-link>
         </li>
         <li
-          class="flex justify-center p-2 text-white hover:bg-white hover:text-black transition-all ease-in-out duration-100 cursor-pointer font-semibold"
+          class="flex text-center font-semibold text-white hover:bg-white hover:text-black transition-all ease-in-out duration-100 cursor-pointer"
         >
-          Снаряжение
-        </li>
-        <li
-          class="flex justify-center p-2 text-white hover:bg-white hover:text-black transition-all ease-in-out duration-100 cursor-pointer font-semibold"
-        >
-          Особенности
-        </li>
-        <li
-          class="flex justify-center p-2 text-white hover:bg-white hover:text-black transition-all ease-in-out duration-100 cursor-pointer font-semibold"
-        >
-          Псионика
+          <router-link :to="`/characters/${uuid}/equipment`" class="w-full p-2">
+            Снаряжение
+          </router-link>
         </li>
       </ul>
     </nav>

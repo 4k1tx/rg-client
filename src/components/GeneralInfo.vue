@@ -4,7 +4,9 @@
     <div id="column__1" class="space-y-2 mx-auto">
       <!-- Имя персонажа -->
       <div class="flex">
-        <label for="name__input" class="border-b border-black w-32"
+        <label
+          for="name__input"
+          class="font-semibold border-b border-black w-32"
           >Имя персонажа</label
         >
         <input
@@ -17,7 +19,9 @@
       </div>
       <!-- Род занятий -->
       <div class="flex">
-        <label for="name__input" class="border-b border-black w-32"
+        <label
+          for="name__input"
+          class="font-semibold border-b border-black w-32"
           >Род занятий</label
         >
         <input
@@ -30,7 +34,9 @@
       </div>
       <!-- Очки опыта -->
       <div class="flex">
-        <label for="name__input" class="border-b border-black w-32"
+        <label
+          for="name__input"
+          class="font-semibold border-b border-black w-32"
           >Очки опыта</label
         >
         <input
@@ -46,7 +52,9 @@
     <div id="column__2" class="space-y-2 mx-auto">
       <!-- Имя игрока -->
       <div class="flex items-center">
-        <label for="name__input" class="border-b border-black w-32"
+        <label
+          for="name__input"
+          class="font-semibold border-b border-black w-32"
           >Имя игрока</label
         >
         <input
@@ -59,7 +67,9 @@
       </div>
       <!-- Родной мир -->
       <div class="flex items-center">
-        <label for="name__input" class="border-b border-black w-32"
+        <label
+          for="name__input"
+          class="font-semibold border-b border-black w-32"
           >Родной мир</label
         >
         <input
@@ -72,7 +82,9 @@
       </div>
       <!-- Устремление -->
       <div class="flex items-center">
-        <label for="name__input" class="border-b border-black w-32"
+        <label
+          for="name__input"
+          class="font-semibold border-b border-black w-32"
           >Устремление</label
         >
         <input
@@ -88,29 +100,18 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from "vue";
+import { ref, watch, computed } from "vue";
 import { useCharacterStore } from "../stores/characterStore";
 
 const characterStore = useCharacterStore();
 
-const localGeneralInfo = ref({
-  characterName: "",
-  playerName: "",
-  careerPath: "",
-  experiencePoints: 5000,
-  homeWorld: "",
-  motivation: "",
-});
+const localGeneralInfo = computed(() => characterStore.character.generalInfo);
 
 const props = defineProps({
   editMode: {
     type: Boolean,
     default: false,
   },
-});
-
-onMounted(() => {
-  localGeneralInfo.value = characterStore.character.generalInfo;
 });
 
 watch(

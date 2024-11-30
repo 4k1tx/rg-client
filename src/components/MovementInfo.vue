@@ -7,8 +7,12 @@
         class="mx-auto flex justify-center items-center border border-black w-24 h-16"
       >
         <div class="text-2xl">
-          {{ characterStore.character.movement.halfMove
-          }}<span class="text-xs">м</span>
+          {{
+            Math.floor(
+              characterStore.character.characteristics.agility.value / 10
+            )
+          }}
+          <span class="text-xs">м</span>
         </div>
       </div>
     </div>
@@ -19,8 +23,12 @@
         class="mx-auto flex justify-center items-center border border-black w-24 h-16"
       >
         <div class="text-2xl">
-          {{ characterStore.character.movement.fullMove
-          }}<span class="text-xs">м</span>
+          {{
+            Math.floor(
+              characterStore.character.characteristics.agility.value / 10
+            ) * 2
+          }}
+          <span class="text-xs">м</span>
         </div>
       </div>
     </div>
@@ -31,8 +39,12 @@
         class="mx-auto flex justify-center items-center border border-black w-24 h-16"
       >
         <div class="text-2xl">
-          {{ characterStore.character.movement.charge
-          }}<span class="text-xs">м</span>
+          {{
+            Math.floor(
+              characterStore.character.characteristics.agility.value / 10
+            ) * 3
+          }}
+          <span class="text-xs">м</span>
         </div>
       </div>
     </div>
@@ -43,8 +55,12 @@
         class="mx-auto flex justify-center items-center border border-black w-24 h-16"
       >
         <div class="text-2xl">
-          {{ characterStore.character.movement.run
-          }}<span class="text-xs">м</span>
+          {{
+            Math.floor(
+              characterStore.character.characteristics.agility.value / 10
+            ) * 6
+          }}
+          <span class="text-xs">м</span>
         </div>
       </div>
     </div>
@@ -55,8 +71,12 @@
         class="mx-auto flex justify-center items-center border border-black w-24 h-16"
       >
         <div class="text-2xl">
-          {{ characterStore.character.movement.baseLeap
-          }}<span class="text-xs">м</span>
+          {{
+            Math.floor(
+              characterStore.character.characteristics.strength.value / 10
+            )
+          }}
+          <span class="text-xs">м</span>
         </div>
       </div>
     </div>
@@ -67,8 +87,12 @@
         class="mx-auto flex justify-center items-center border border-black w-24 h-16"
       >
         <div class="text-2xl">
-          {{ characterStore.character.movement.baseJump
-          }}<span class="text-xs">см</span>
+          {{
+            Math.floor(
+              characterStore.character.characteristics.strength.value / 10
+            ) * 20
+          }}
+          <span class="text-xs">см</span>
         </div>
       </div>
     </div>

@@ -36,58 +36,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from "vue";
+import { ref, watch, computed } from "vue";
 import { useCharacterStore } from "../stores/characterStore";
 
 const characterStore = useCharacterStore();
 
-const localCharacteristics = ref({
-  weaponSkill: {
-    name: "Ближний бой",
-    value: 0,
-    advancements: [false, false, false, false],
-  },
-  ballisticSkill: {
-    name: "Дальний бой",
-    value: 0,
-    advancements: [false, false, false, false],
-  },
-  strength: {
-    name: "Сила",
-    value: 0,
-    advancements: [false, false, false, false],
-  },
-  toughness: {
-    name: "Выносливость",
-    value: 0,
-    advancements: [false, false, false, false],
-  },
-  agility: {
-    name: "Ловкость",
-    value: 0,
-    advancements: [false, false, false, false],
-  },
-  intelligence: {
-    name: "Интеллект",
-    value: 0,
-    advancements: [false, false, false, false],
-  },
-  perception: {
-    name: "Восприятие",
-    value: 0,
-    advancements: [false, false, false, false],
-  },
-  willPower: {
-    name: "Сила Воли",
-    value: 0,
-    advancements: [false, false, false, false],
-  },
-  fellowship: {
-    name: "Товарищество",
-    value: 0,
-    advancements: [false, false, false, false],
-  },
-});
+const localCharacteristics = computed(
+  () => characterStore.character.characteristics
+);
 
 const props = defineProps({
   editMode: {
@@ -111,16 +67,11 @@ const toggleAdvancementLevel = (characteristic, advancement) => {
   }
 };
 
-onMounted(() => {
-  localCharacteristics.value = characterStore.character.characteristics;
-});
-
 watch(
   () => props.editMode,
   (newValue, oldValue) => {
     if (oldValue === true && newValue === false) {
       characterStore.character.characteristics = localCharacteristics.value;
-      characterStore.calculateMovement();
     }
   }
 );
