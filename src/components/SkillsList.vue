@@ -24,14 +24,6 @@
             :class="{ 'bg-gray-800': skill.levels[i - 1] }"
             @click="toggleSkillLevel(skill, i - 1)"
           ></div>
-          <!-- Input для ввода бонуса -->
-          <div class="w-8 h-6 border border-gray-400">
-            <input
-              type="text"
-              class="bg-transparent text-center outline-none border-none w-7"
-              maxlength="2"
-            />
-          </div>
         </div>
       </div>
     </div>
@@ -58,14 +50,6 @@
             :class="{ 'bg-gray-800': skill.levels[i - 1] }"
             @click="toggleSkillLevel(skill, i - 1)"
           ></div>
-          <!-- Input для ввода бонуса -->
-          <div class="w-8 h-6 border border-gray-400">
-            <input
-              type="text"
-              class="bg-transparent text-center outline-none border-none w-7"
-              maxlength="2"
-            />
-          </div>
         </div>
       </div>
     </div>

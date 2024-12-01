@@ -17,6 +17,7 @@
     >
       <XMarkIcon class="size-5" />
     </button>
+
     <GeneralInfo class="mb-8" :edit-mode="editMode" />
     <CharacteristicsInfo :edit-mode="editMode" class="mb-5" />
     <SkillsList :edit-mode="editMode" />

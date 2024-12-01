@@ -40,7 +40,7 @@
 <script setup>
 import { ref, reactive } from "vue";
 import { useUserStore } from "../stores/userStore";
-import VButtonLoader from "../components/VButtonLoader.vue";
+import VButtonLoader from "./ui/VButtonLoader.vue";
 
 const userStore = useUserStore();
 const credentials = reactive({
